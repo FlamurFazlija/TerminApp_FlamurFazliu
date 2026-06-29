@@ -1,4 +1,5 @@
-<script setup>
+﻿<script setup>
+// Hinweis: Diese Datei wurde mit KI-Unterstuetzung erstellt und anschliessend angepasst und getestet.
 const supabase = useSupabase()
 
 const slots = ref([])
@@ -65,7 +66,7 @@ async function slotSperren(slot) {
     .eq('id', slot.id)
 
   if (error) {
-    fehler.value = 'Slot konnte nicht geändert werden.'
+    fehler.value = 'Slot konnte nicht geÃ¤ndert werden.'
   } else {
     datenLaden()
   }
