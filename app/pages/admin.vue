@@ -1,5 +1,5 @@
 ﻿<script setup>
-// Hinweis: Diese Datei wurde mit KI-Unterstuetzung erstellt und anschliessend angepasst und getestet.
+// Hinweis: Ich habe diese Datei mit KI-Unterstuetzung erstellt und anschliessend angepasst und getestet.
 const supabase = useSupabase()
 
 const slots = ref([])

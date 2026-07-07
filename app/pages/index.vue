@@ -60,9 +60,9 @@ function datumFormatieren(wert) {
 
 onMounted(() => {
   slotsLaden()
-})
+}) 
 </script>
-
+// Hinweis: Bei der Umsetzung ab diesem Schnittpunkt wurde KI zur Orientierung und Fehlersuche verwendet.
 <template>
   <section>
     <h1>Verfügbare Sprechstunden-Slots</h1>
