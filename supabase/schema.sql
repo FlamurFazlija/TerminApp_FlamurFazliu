@@ -1,4 +1,9 @@
 ﻿-- Hinweis zur KI-Nutzung:
+-- KI wurde bei einem kleinen Teil dieses Schemas als Hilfestellung genutzt.
+-- Vor allem ging es um das Verstaendnis von Supabase, RLS und Fehlermeldungen.
+-- Die SQL-Befehle wurden danach im Projekt getestet und angepasst.
+
+-- Hinweis zur KI-Nutzung:
 -- Bei Teilen dieses Datenbankschemas wurde KI als Hilfestellung genutzt,
 -- vor allem zum besseren Verständnis von Supabase, RLS und typischen Fehlermeldungen.
 -- Die SQL-Befehle wurden anschließend im Projekt getestet und angepasst.
@@ -146,3 +151,4 @@ $$;
 
 grant execute on function get_available_slots() to anon;
 grant execute on function get_available_slots() to authenticated;
+
