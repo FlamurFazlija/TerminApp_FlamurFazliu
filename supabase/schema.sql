@@ -1,4 +1,8 @@
--- Datenbankschema für die TerminApp
+﻿-- Hinweis zur KI-Nutzung:
+-- Bei Teilen dieses Datenbankschemas wurde KI als Hilfestellung genutzt,
+-- vor allem zum besseren Verständnis von Supabase, RLS und typischen Fehlermeldungen.
+-- Die SQL-Befehle wurden anschließend im Projekt getestet und angepasst.
+-- Datenbankschema fÃ¼r die TerminApp
 
 -- Nutzerprofile mit Rolle
 create table profiles (
@@ -48,7 +52,7 @@ after insert on auth.users
 for each row
 execute procedure handle_new_user();
 
--- Prüfen, ob aktueller Nutzer Admin ist
+-- PrÃ¼fen, ob aktueller Nutzer Admin ist
 create or replace function is_admin()
 returns boolean
 language sql
@@ -78,19 +82,19 @@ using (
 );
 
 -- Slots:
--- Alle dürfen Slots sehen
+-- Alle dÃ¼rfen Slots sehen
 create policy slots_select
 on slots
 for select
 using (true);
 
--- Nur Admins dürfen Slots anlegen
+-- Nur Admins dÃ¼rfen Slots anlegen
 create policy slots_insert
 on slots
 for insert
 with check (is_admin());
 
--- Nur Admins dürfen Slots ändern
+-- Nur Admins dÃ¼rfen Slots Ã¤ndern
 create policy slots_update
 on slots
 for update
@@ -107,7 +111,7 @@ using (
   or is_admin()
 );
 
--- Nutzer dürfen eigene Buchungen erstellen
+-- Nutzer dÃ¼rfen eigene Buchungen erstellen
 create policy bookings_insert
 on bookings
 for insert
@@ -115,7 +119,7 @@ with check (
   user_id = auth.uid()
 );
 
--- Nutzer dürfen eigene Buchungen löschen, Admins alle
+-- Nutzer dÃ¼rfen eigene Buchungen lÃ¶schen, Admins alle
 create policy bookings_delete
 on bookings
 for delete
